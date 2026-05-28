@@ -1,17 +1,39 @@
 
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  .page { font-family: monospace; background: radial-gradient(ellipse at top left, #2a0a4a 0%, #1a0535 30%, #000 100%); color: #d4a8ff; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-  .layout { display: flex; gap: 2rem; align-items: flex-start; max-width: 860px; width: 100%; padding: 2rem; }
+  .page { font-family: monospace; background: radial-gradient(ellipse at top left, #2a0a4a 0%, #1a0535 30%, #000 100%); color: #d4a8ff; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+  .layout { display: flex; gap: 2rem; align-items: flex-start; max-width: 860px; width: 100%; }
   .modal { background: rgba(40,0,70,0.5); border: 1px solid #4a1a7a; border-radius: 8px; padding: 1.5rem; flex: 1; backdrop-filter: blur(4px); }
   .modal h1 { font-size: 1.1rem; color: #c77dff; margin-bottom: 0.5rem; }
   .modal h2 { font-size: 0.8rem; font-weight: 400; color: #b094cc; line-height: 1.7; margin-bottom: 1rem; }
   .modal p { font-size: 0.75rem; color: #5a3a7a; }
-  .pic-slot { width: 180px; flex-shrink: 0; border: 1px solid #4a1a7a; border-radius: 8px; height: 220px; overflow: hidden; background: rgba(20,0,40,0.6); }
-  .pic-slot-lain { width: 180px; flex-shrink: 0; border: 1px solid #4a1a7a; border-radius: 8px; height: 220px; overflow: hidden; background: rgba(20,0,40,0.6); }
-  .pic-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: 7px; }
+  .pic-slot {
+    width: 180px;
+    flex-shrink: 0;
+    border: 1px solid #4a1a7a;
+    border-radius: 8px;
+    height: 220px;
+    overflow: hidden;
+    background: rgba(20,0,40,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pic-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+    display: block;
+  }
+  .pic-slot .fallback {
+    color: #4a1a7a;
+    font-size: 0.65rem;
+    text-align: center;
+    padding: 0.5rem;
+    line-height: 1.6;
+  }
 </style>
-
 <div class="page">
   <div class="layout">
     <div class="modal">
@@ -33,11 +55,14 @@
       <p>Lain's out</p>
     </div>
 
-    <div class="pic-slot">
-      <img src="/pictures/think.PNG" alt="Miahou" />
+    <div class="pic-slot" id="slot-miahou">
+      <img src="/pictures/think.PNG" alt="Miahou" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='block';" />
+      <span class="fallback" style="display:none;">[ Miahou ]<br>/pictures/think.PNG</span>
     </div>
-   <div class="pic-slot-lain">
-      <img src="/pictures/LAIN.webp" alt="Lain" />
+
+    <div class="pic-slot" id="slot-lain">
+      <img src="/pictures/LAIN.webp" alt="Lain" onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='block';" />
+      <span class="fallback" style="display:none;">[ Lain ]<br>/pictures/LAIN.webp</span>
     </div>
   </div>
 </div>
