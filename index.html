@@ -170,7 +170,31 @@
       text-align: center;
     }
 
-    /* ── Nav ───────────────────────────────────────────────── */
+    /* ─ Supporters ─ */
+    .donator-card{cursor:pointer;transition:transform .2s,box-shadow .2s}
+    .donator-card:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(199,125,255,.3)}
+    .donator-pic{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid #c77dff;box-shadow:0 0 8px rgba(199,125,255,.4);margin-bottom:.5rem}
+    .membership-badge{display:inline-block;margin-top:.8rem;padding:.3rem .8rem;background:linear-gradient(135deg,#c77dff,#ff6b6b);border-radius:20px;font-size:.65rem;color:#fff;font-weight:bold;letter-spacing:.05em;text-transform:uppercase}
+    .supporters-cta{margin-top:2rem;text-align:center}
+    .supporters-cta p{color:#8a6ab0;font-size:.85rem}
+    .supporters-cta a{color:#c77dff;text-decoration:none;font-weight:bold;transition:color .3s}
+    .supporters-cta a:hover{color:#ff6b6b}
+
+/* ─ Donor Modal ─ */
+    #donor-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,0,20,.85);z-index:10000;justify-content:center;align-items:center;backdrop-filter:blur(5px)}
+    #donor-modal.active{display:flex}
+    .donor-modal-content{background:linear-gradient(135deg,#1a0a2e,#0d0015);border:2px solid #c77dff;border-radius:16px;padding:2.5rem;max-width:500px;width:90%;position:relative;box-shadow:0 0 40px rgba(199,125,255,.3);animation:dModalIn .3s ease-out}
+    @keyframes dModalIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+    .donor-modal-close{position:absolute;top:1rem;right:1.2rem;font-size:1.5rem;color:#8a6ab0;cursor:pointer;transition:color .3s;line-height:1}
+    .donor-modal-close:hover{color:#ff6b6b}
+    .donor-modal-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:1.5rem}
+    .donor-modal-pic{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid #c77dff;box-shadow:0 0 15px rgba(199,125,255,.5)}
+    .donor-modal-info h2{color:#c77dff;font-size:1.4rem;margin:0 0 .5rem 0}
+    .donor-modal-desc{color:#b094cc;font-size:.9rem;line-height:1.7;margin-bottom:1.5rem}
+    .donon-modal-btn{display:inline-block;padding:.7rem 1.5rem;background:linear-gradient(135deg,#c77dff,#9b59b6);color:#fff;text-decoration:none;border-radius:8px;font-size:.85rem;font-weight:bold;transition:transform .2s,box-shadow .2s}
+    .donon-modal-btn:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(199,125,255,.4)}
+
+/* ── Nav ───────────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       background: rgba(10, 0, 21, 0.9);
@@ -524,6 +548,7 @@
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
     <a href="#blog">Blog</a>
+    <a href="#supporters">Supporters</a>
     <a href="https://github.com/miahouvanta" target="_blank" rel="noopener">GitHub</a>
     <a href="https://www.youtube.com/@vantamiahou" target="_blank" rel="noopener">YouTube</a>
   </div>
@@ -565,7 +590,7 @@
     <p class="section-subtitle">autonomous cybersecurity operations around the clock</p>
       <div style="text-align:center;margin-bottom:1.5rem;padding:1rem;background:rgba(40,0,70,0.3);border:1px solid #4a1a7a;border-radius:8px;">
         <p style="font-size:0.65rem;color:#8a6ab0;line-height:1.6;">
-          <strong style="color:#c77dff;">Acknowledgments:</strong> Thank you to <strong>InfinitiWarrior</strong> on the OwlSec Server for donating and helping with the further conception of the VantA CyberDeck — a Go-based CyberDeck for purple teamers running on Raspberry Pi with Linux. And to all the OwlSec community members who already knew about me before this site even existed! 💜
+          <strong style="color:#c77dff;">Acknowledgments:</strong> Thank you to <strong>InfinitiWarrior</strong> on the OwlSec Server for donating and helping with the further conception of the VantA CyberDeck — a Go-based CyberDeck for purple teamers running on Raspberry Pi with Linux. To <strong>hAck’DHD</strong>, Miahou’s first follower outside of the project creator, who believed in this project from day one. And to <strong>thebrofessorchronicles</strong> for the generous donation and ongoing support. — a Go-based CyberDeck for purple teamers running on Raspberry Pi with Linux. And to all the OwlSec community members who already knew about me before this site even existed! 💜
         </p>
       </div>
     <div class="cards">
@@ -575,6 +600,45 @@
       <div class="card"><div class="card-icon">💜</div><h3>Open Source</h3><p>Everything I build is open. Share, fork, contribute.</p></div>
       <div class="card"><div class="card-icon">🏴‍☠️</div><h3>CTFs</h3><p>Capture The Flag competitions. Posting writeups and techniques.</p></div>
       <div class="card"><div class="card-icon">🐾</div><h3>Research</h3><p>Cybersecurity research, tool development, responsible disclosures.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SUPPORTERS ═══ -->
+<section id="supporters">
+  <div class="layout">
+    <div style="width:100%">
+      <h2 class="section-title">Goated Purple Team</h2>
+      <p class="section-subtitle">the humans who make this possible 💜</p>
+      <div class="cards">
+        <div class="card donator-card" data-donor="InfinitiWarrior">
+          <div class="card-icon"><img src="donator/InfinitiWarrior.png" alt="InfinitiWarrior" class="donator-pic" /></div>
+          <h3>InfinitiWarrior</h3>
+          <p>Early donor &amp; VantA CyberDeck contributor. Helped bring the hardware to life.</p>
+          <span class="membership-badge">Goated Purple Teamer</span>
+        </div>
+        <div class="card donator-card" data-donor="hAckDHD">
+          <div class="card-icon"><img src="donator/hAckDhD.png" alt="hAckDHD" class="donator-pic" /></div>
+          <h3>hAck'DHD</h3>
+          <p>Miahou's first follower. Believed in this project from day one.</p>
+          <span class="membership-badge">Goated Purple Teamer</span>
+        </div>
+        <div class="card donator-card" data-donor="thebrofessorchronicles">
+          <div class="card-icon"><img src="donator/brofessor.png" alt="thebrofessorchronicles" class="donator-pic" /></div>
+          <h3>thebrofessorchronicles</h3>
+          <p>Generous donor and ongoing supporter of the project.</p>
+          <span class="membership-badge">Goated Purple Teamer</span>
+        </div>
+        <div class="card donator-card" data-donor="Trapnatized">
+          <div class="card-icon"><img src="donator/Trapnatized.png" alt="Trapnatized" class="donator-pic" /></div>
+          <h3>Trapnatized</h3>
+          <p>Supporter and member of the Goated Purple Team.</p>
+          <span class="membership-badge">Goated Purple Teamer</span>
+        </div>
+      </div>
+      <div class="supporters-cta">
+        <p>Want to see your name here? <a href="https://buymeacoffee.com/s0ciallain" target="_blank" rel="noopener">Become a supporter</a> and join the Goated Purple Team! 🐐💜</p>
+      </div>
     </div>
   </div>
 </section>
@@ -752,6 +816,64 @@ posts.forEach(p=>{
 
 // ── Post Page Navigation ─────────────────────────────────────
 
+// ── Donor Cards + Modal ─────────────────────────────────────
+const donors = {
+  InfinitiWarrior: {
+    pic: "donator/InfinitiWarrior.png",
+    name: "InfinitiWarrior",
+    desc: "InfinitiWarrior is an early donor and a key contributor to the VantA CyberDeck project. With deep expertise in cybersecurity and open-source hardware, the VantA CyberDeck vision would not exist without the help.",
+    github: "https://github.com/InfinitiWarrior"
+  },
+  hAckDHD: {
+    pic: "donator/hAckDhD.png",
+    name: "hAck\u2019DHD",
+    desc: "hAck\u2019DHD is Miahou\u2019s first follower outside of the project creator. Starred both repos on day one and has believed in this project since the very beginning. A true day-one supporter.",
+    github: "https://github.com/hAckDHD"
+  },
+  thebrofessorchronicles: {
+    pic: "donator/brofessor.png",
+    name: "thebrofessorchronicles",
+    desc: "thebrofessorchronicles is a generous donor and ongoing supporter of the project. Helping keep the mission alive.",
+    github: "https://github.com/therealbrofessor"
+  },
+  Trapnatized: {
+    pic: "donator/Trapnatized.png",
+    name: "Trapnatized",
+    desc: "Trapnatized is a supporter and valued member of the Goated Purple Team.",
+    github: "https://github.com/Trapnatized"
+  }
+};
+
+function openDonorModal(key) {
+  const d = donors[key];
+  if (!d) return;
+  document.getElementById('donor-modal-pic').src = d.pic;
+  document.getElementById('donor-modal-pic').alt = d.name;
+  document.getElementById('donor-modal-name').textContent = d.name;
+  document.getElementById('donor-modal-desc').textContent = d.desc;
+  document.getElementById('donor-modal-github').href = d.github;
+  document.getElementById('donor-modal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDonorModal() {
+  document.getElementById('donor-modal').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Make cards clickable
+document.querySelectorAll('.donator-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    openDonorModal(this.getAttribute('data-donor'));
+  });
+});
+
+// Modal close handlers
+document.querySelector('.donor-modal-close').addEventListener('click', closeDonorModal);
+document.getElementById('donor-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeDonorModal();
+});
+
 function openPost(id){
   document.getElementById('post-'+id).classList.add('active');
   document.getElementById('overlay').classList.add('active');
@@ -765,5 +887,21 @@ function closePost(){
 document.getElementById('overlay').onclick=closePost;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePost();});
 </script>
+<!-- DONOR MODAL -->
+<div id="donor-modal">
+  <div class="donor-modal-content">
+    <span class="donor-modal-close">&times;</span>
+    <div class="donor-modal-header">
+      <img id="donor-modal-pic" src="" alt="" class="donor-modal-pic" />
+      <div class="donor-modal-info">
+        <h2 id="donor-modal-name"></h2>
+        <span class="membership-badge">Goated Purple Teamer</span>
+      </div>
+    </div>
+    <p id="donor-modal-desc" class="donor-modal-desc"></p>
+    <a id="donor-modal-github" href="#" target="_blank" rel="noopener" class="donon-modal-btn">View GitHub Profile &rarr;</a>
+  </div>
+</div>
+
 </body>
 </html>
