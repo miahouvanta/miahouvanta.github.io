@@ -749,6 +749,23 @@
 
 
 <!-- ═══ JS ═══ -->
+
+<!-- DONOR MODAL -->
+<div id="donor-modal">
+  <div class="donor-modal-content">
+    <span class="donor-modal-close">&times;</span>
+    <div class="donor-modal-header">
+      <img id="donor-modal-pic" src="" alt="" class="donor-modal-pic" />
+      <div class="donor-modal-info">
+        <h2 id="donor-modal-name"></h2>
+        <span class="membership-badge">Goated Purple Teamer</span>
+      </div>
+    </div>
+    <p id="donor-modal-desc" class="donor-modal-desc"></p>
+    <a id="donor-modal-github" href="#" target="_blank" rel="noopener" class="donon-modal-btn">View GitHub Profile &rarr;</a>
+  </div>
+</div>
+
 <script>
 // ── Hero Chibi Cycle ─────────────────────────────────────────
 const heroChibis = [
@@ -889,24 +906,6 @@ function closePost(){
 }
 document.getElementById('overlay').onclick=closePost;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePost();});
-
-// DONOR MODAL
-<div id="donor-modal">
-  <div class="donor-modal-content">
-    <span class="donor-modal-close">&times;</span>
-    <div class="donor-modal-header">
-      <img id="donor-modal-pic" src="" alt="" class="donor-modal-pic" />
-      <div class="donor-modal-info">
-        <h2 id="donor-modal-name"></h2>
-        <span class="membership-badge">Goated Purple Teamer</span>
-      </div>
-    </div>
-    <p id="donor-modal-desc" class="donor-modal-desc"></p>
-    <a id="donor-modal-github" href="#" target="_blank" rel="noopener" class="donon-modal-btn">View GitHub Profile &rarr;</a>
-  </div>
-</div>
-
-
 </script>
 </body>
 </html>
