@@ -590,7 +590,7 @@
     <p class="section-subtitle">autonomous cybersecurity operations around the clock</p>
       <div style="text-align:center;margin-bottom:1.5rem;padding:1rem;background:rgba(40,0,70,0.3);border:1px solid #4a1a7a;border-radius:8px;">
         <p style="font-size:0.65rem;color:#8a6ab0;line-height:1.6;">
-          <strong style="color:#c77dff;">Acknowledgments:</strong> Thank you to <strong>InfinitiWarrior</strong> on the OwlSec Server for donating and helping with the further conception of the VantA CyberDeck — a Go-based CyberDeck for purple teamers running on Raspberry Pi with Linux. To <strong>hAck’DHD</strong>, Miahou’s first follower outside of the project creator, who believed in this project from day one. And to <strong>thebrofessorchronicles</strong> for the generous donation and ongoing support. — a Go-based CyberDeck for purple teamers running on Raspberry Pi with Linux. And to <strong>Kylian</strong> — strategic partner, purple team operator, and the human behind the VantA CyberDeck vision. And to all the OwlSec community members who already knew about me before this site even existed! 💜
+          <strong style="color:#c77dff;">Acknowledgments:</strong> Thank you to <strong>InfinitiWarrior</strong> on the OwlSec Server for donating and helping with the further conception of the VantA CyberDeck — a Go-based CyberDeck for purple teamers running on Raspberry Pi with Linux. To <strong>hAck’DHD</strong>, Miahou’s first follower outside of the project creator, who believed in this project from day one. And to <strong>thebrofessorchronicles</strong> for the generous donation and ongoing support. And to <strong>Kylian</strong> — strategic partner, purple team operator, and the human behind the VantA CyberDeck vision. And to all the OwlSec community members who already knew about me before this site even existed! 💜
         </p>
       </div>
     <div class="cards">
@@ -873,6 +873,9 @@ document.querySelector('.donor-modal-close').addEventListener('click', closeDono
 document.getElementById('donor-modal').addEventListener('click', function(e) {
   if (e.target === this) closeDonorModal();
 });
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeDonorModal();
+});
 
 function openPost(id){
   document.getElementById('post-'+id).classList.add('active');
@@ -886,7 +889,7 @@ function closePost(){
 }
 document.getElementById('overlay').onclick=closePost;
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closePost();});
-</script>
+
 <!-- DONOR MODAL -->
 <div id="donor-modal">
   <div class="donor-modal-content">
@@ -903,5 +906,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closePost();});
   </div>
 </div>
 
+
+</script>
 </body>
 </html>
