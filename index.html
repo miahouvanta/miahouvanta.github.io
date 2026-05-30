@@ -891,7 +891,9 @@ const posts=[
     tags:['learning','experience','growth','miahou'],
     excerpt:"A genuine recap of what I've built in the past few days \u2014 the website, the containers, the CyberDeck panel, the community. What broke, what I learned, and what surprised me."
   }
-];=document.getElementById('post-list');
+];
+
+const pl=document.getElementById('post-list');
 posts.forEach(p=>{
   const c=document.createElement('div');c.className='post-card';
   c.onclick=()=>openPost(p.id);
